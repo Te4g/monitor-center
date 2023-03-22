@@ -1,0 +1,12 @@
+- name: Install Python3 and other dependencies
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update package repository
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install Python3
+      ansible.builtin.apt:
+        name: python3
+        state: present
