@@ -23,3 +23,7 @@ variable openstack_password {
   sensitive = true
 }
 ###< OPENSTACK PROVIDER ###
+
+data "openstack_compute_keypair_v2" "ansible_ssh_key" {
+  name = "ansible"
+}

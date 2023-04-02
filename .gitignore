@@ -2,3 +2,4 @@ grafana
 influxdb
 postgres
 terraform/.terraform
+terraform.tfstate

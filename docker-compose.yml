@@ -24,8 +24,8 @@ services:
     ports:
       - "8086:8086"
     volumes:
-      - ./influxdb/data:/var/lib/influxdb2
-      - ./influxdb/config:/etc/influxdb2
+      - ./.docker/influxdb/data:/var/lib/influxdb2
+      - ./.docker/influxdb/config:/etc/influxdb2
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.influxdb.rule=Host(`influxdb.docker.localhost`)"
@@ -42,8 +42,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./grafana/data:/var/lib/grafana
-      #- ./grafana/config:/etc/grafana
+      - ./.docker/grafana/data:/var/lib/grafana
+      #- ./.docker/grafana/config:/etc/grafana
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grafana.rule=Host(`grafana.docker.localhost`)"
